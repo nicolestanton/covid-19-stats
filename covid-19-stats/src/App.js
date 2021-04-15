@@ -1,5 +1,5 @@
 // import "./App.scss";
-import "./Styles/App.scss"
+import "./App.scss"
 import React from "react";
 import Dashboard from "./Views/Dashboard";
 

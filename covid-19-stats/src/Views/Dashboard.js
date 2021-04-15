@@ -25,11 +25,6 @@ export function Dashboard() {
       <div>Loading...</div>
     )
   }
-  // var month = dateObj.getUTCMonth() + 1; //months from 1-12
-  // var day = dateObj.getUTCDate();
-  // var year = dateObj.getUTCFullYear();
-
-  // newdate = year + "/" + month + "/" + day;
 
   const newDate = new Date()
   const month = newDate.getMonth()
@@ -48,11 +43,13 @@ export function Dashboard() {
         <div className='stat-overview'>
           <div className='stat'>
             <FontAwesomeIcon icon={faBacteria} className='icon' />
-            <h3>New Cases: {data.data[0].newCases}</h3>
+            <h3>New Cases</h3>
+            <span> {data.data[0].newCases}</span>
           </div>
           <div className='stat'>
             <FontAwesomeIcon icon={faVirus} className='icon' />
-            <h3>Total Cases: {data.data[0].totalCases}</h3>
+            <h3>Total Cases</h3>
+            <span> {data.data[0].totalCases}</span>
           </div>
         </div>
         <Select className='react-select' options={Locations} onChange={(e) => {

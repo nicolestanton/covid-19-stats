@@ -1,0 +1,35 @@
+
+.app-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ececec;
+  border-radius: 8px;
+  text-align: center
+}
+
+.react-select{
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 16px;
+}
+
+.stat-overview{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 990px;
+}
+
+.stat{
+  padding: 24px;
+  border-radius: 4px;
+  margin: 16px;
+  box-shadow: 2px -1px 14px 2px #C7C7C7;
+  background-color: #6861d6;
+  color: white;
+}
+
+.icon{
+  font-size: 42px;
+}
+
