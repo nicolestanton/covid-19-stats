@@ -41,11 +41,11 @@ export function Dashboard() {
             <span> {todaysData.totalCases}</span>
           </div>
         </div>
-        {/* <DatePicker /> */}
-        <Chart data={data.data} days={7} />
+        <DatePicker />
         <Select className='react-select' options={Locations} onChange={(e) => {
           setLocation(e.value)
         }} />
+        <Chart data={data.data} days={7} />
       </div>
     </React.Fragment>
   );
