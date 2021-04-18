@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import TextField from '@material-ui/core/TextField';
 
 function DatePicker({ onChange }) {
-
-    const todaysDate = new Date()
     return (
         <form className="date-picker" noValidate>
+
             <TextField
                 id="date"
                 label="Choose date"
@@ -16,14 +15,14 @@ function DatePicker({ onChange }) {
                     shrink: true,
                 }}
                 onChange={e => {
-                    const testDate = e.target.value;
-                    onChange(testDate);
-                    console.log("date picker testing", testDate);
+                    const { value } = e.target;
+                    onChange({ value });
+                    console.log("date picker component console", { value });
                 }}
             />
         </form>
     );
-}
+};
 
 
 export default DatePicker

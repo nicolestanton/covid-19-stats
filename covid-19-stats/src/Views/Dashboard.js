@@ -14,10 +14,11 @@ export function Dashboard() {
   const [location, setLocation] = useState('England');
   const [chosenDate, setChosenDate] = useState('');
 
+
   const url = getApiUrl(location);
   const [data, status] = useFetch({ url, shouldExectute: location !== null });
 
-  console.log('data:', data, 'status:', status);
+  console.log('data:', data, 'status:', status, 'chosenDate', chosenDate);
 
   if (status !== 'SUCCESS') {
     return (
@@ -44,9 +45,9 @@ export function Dashboard() {
           </div>
         </div>
         <DatePicker
-          onChange={(testDate) => {
-            setChosenDate(testDate)
-            console.log('chosen date from picker in dashboard', testDate, chosenDate)
+          onChange={({ value }) => {
+            setChosenDate({ value })
+            // console.log('chosen date', chosenDate)
           }
           }
         />
