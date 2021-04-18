@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
 function DatePicker({ onChange }) {

@@ -1,25 +1,22 @@
 h1{
-  padding-top: 24px;
+  padding: 12px;
+  font-size: 24px;
 }
 .app-container{
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #ececec;
-  border-radius: 8px;
   text-align: center
 }
 
 .react-select{
-  max-width: 500px;
-  margin: 0 auto;
-  padding-bottom: 16px;
+  width: 80%;
+    margin: 0 auto;
+    padding-bottom: 24px;
 }
-
 .stat-overview{
   display: flex;
   margin: 0 auto;
   justify-content: center;
-  max-width: 990px;
+  // max-width: 990px;
+  padding-bottom: 32px;
 }
 
 .stat{
@@ -27,11 +24,37 @@ h1{
   border-radius: 4px;
   margin: 16px;
   box-shadow: 2px -1px 14px 2px #C7C7C7;
-  background-color: #6861d6;
+  background-color: #8884d8;
   color: white;
 }
 
 .icon{
-  font-size: 42px;
+  font-size: 40px;
+}
+
+.date-picker{
+  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 24px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+}
+
+.data-chart{
+  margin: 0 auto
+}
+
+
+
+@media only screen and(min-width: 1024px){
+
+  .react-select{
+    max-width: 50%;
+  }
+
 }
 

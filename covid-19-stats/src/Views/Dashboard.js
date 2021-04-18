@@ -12,9 +12,8 @@ import { faVirus, faBacteria } from '@fortawesome/free-solid-svg-icons'
 
 export function Dashboard() {
   const [location, setLocation] = useState('England');
-  const [chosenDate, setChosenDate] = useState('');
-
-
+  const todaysDate = new Date()
+  const [chosenDate, setChosenDate] = useState(todaysDate);
   const url = getApiUrl(location);
   const [data, status] = useFetch({ url, shouldExectute: location !== null });
 
@@ -44,19 +43,24 @@ export function Dashboard() {
             <span> {todaysData.totalCases}</span>
           </div>
         </div>
-        <DatePicker
-          onChange={({ value }) => {
-            setChosenDate({ value })
-            // console.log('chosen date', chosenDate)
-          }
-          }
-        />
-        <Select className='react-select' options={Locations} onChange={(e) => {
-          setLocation(e.value)
-        }} />
-        <Chart data={data.data} days={7} />
+        <div className='data'>
+          <div className='choose-data'>
+            <DatePicker
+              onChange={({ value }) => {
+                setChosenDate({ value })
+              }
+              }
+            />
+            <Select className='react-select' options={Locations} onChange={(e) => {
+              setLocation(e.value)
+            }} />
+          </div>
+          <div className='data-chart'>
+            <Chart data={data.data} days={7} />
+          </div>
+        </div>
       </div>
-    </React.Fragment>
+    </React.Fragment >
   );
 }
 
