@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState } from "react";
 import useFetch from '../Hooks/useFetch'
 import Locations from '../Config/Locations'
 import Select from 'react-select'
@@ -12,6 +12,8 @@ import { faVirus, faBacteria } from '@fortawesome/free-solid-svg-icons'
 
 export function Dashboard() {
   const [location, setLocation] = useState('England');
+  const [chosenDate, setChosenDate] = useState();
+
   const url = getApiUrl(location);
   const [data, status] = useFetch({ url, shouldExectute: location !== null });
 
@@ -41,7 +43,14 @@ export function Dashboard() {
             <span> {todaysData.totalCases}</span>
           </div>
         </div>
-        <DatePicker />
+        <DatePicker
+          onChange={(testDate) => {
+            setChosenDate(testDate)
+            console.log('chosen date from picker in dashboard', testDate, chosenDate)
+          }
+          }
+
+        />
         <Select className='react-select' options={Locations} onChange={(e) => {
           setLocation(e.value)
         }} />
