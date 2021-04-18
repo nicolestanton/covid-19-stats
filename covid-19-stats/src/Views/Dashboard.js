@@ -12,7 +12,7 @@ import { faVirus, faBacteria } from '@fortawesome/free-solid-svg-icons'
 
 export function Dashboard() {
   const [location, setLocation] = useState('England');
-  const [chosenDate, setChosenDate] = useState();
+  const [chosenDate, setChosenDate] = useState('');
 
   const url = getApiUrl(location);
   const [data, status] = useFetch({ url, shouldExectute: location !== null });
@@ -49,7 +49,6 @@ export function Dashboard() {
             console.log('chosen date from picker in dashboard', testDate, chosenDate)
           }
           }
-
         />
         <Select className='react-select' options={Locations} onChange={(e) => {
           setLocation(e.value)
