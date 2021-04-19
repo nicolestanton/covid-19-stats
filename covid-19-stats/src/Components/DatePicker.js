@@ -4,7 +4,6 @@ import TextField from '@material-ui/core/TextField';
 function DatePicker({ onChange }) {
     return (
         <form className="date-picker" noValidate>
-
             <TextField
                 id="date"
                 label="Choose date"
@@ -15,8 +14,8 @@ function DatePicker({ onChange }) {
                 }}
                 onChange={e => {
                     const { value } = e.target;
-                    onChange({ value });
-                    console.log("date picker component console", { value });
+                    onChange(value);
+                    console.log("date picker component console", { value }.value);
                 }}
             />
         </form>

@@ -4,7 +4,7 @@ import Locations from '../Config/Locations'
 import Select from 'react-select'
 import Chart from '../Components/Chart'
 import { getApiUrl } from '../Utils/api-utils';
-import { readableDateFormat } from '../Utils/date-utils';
+import { readableDateFormat, formatDate } from '../Utils/date-utils';
 import DatePicker from '../Components/DatePicker'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,11 +13,12 @@ import { faVirus, faBacteria } from '@fortawesome/free-solid-svg-icons'
 export function Dashboard() {
   const [location, setLocation] = useState('England');
   const todaysDate = new Date()
-  const [chosenDate, setChosenDate] = useState(todaysDate);
-  const url = getApiUrl(location);
+  const formattedDate = formatDate(todaysDate)
+  const [chosenDate, setChosenDate] = useState(formattedDate);
+  const url = getApiUrl({ location, chosenDate });
   const [data, status] = useFetch({ url, shouldExectute: location !== null });
 
-  console.log('data:', data, 'status:', status, 'chosenDate', chosenDate);
+  console.log('data:', data, 'status:', status, 'chosenDate', chosenDate, 'formattedTodaysDate', formattedDate);
 
   if (status !== 'SUCCESS') {
     return (
@@ -46,8 +47,9 @@ export function Dashboard() {
         <div className='data'>
           <div className='choose-data'>
             <DatePicker
-              onChange={({ value }) => {
-                setChosenDate({ value })
+              onChange={(value) => {
+                setChosenDate(value)
+                console.log('____', value)
               }
               }
             />
