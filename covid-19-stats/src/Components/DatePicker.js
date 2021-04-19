@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
-function DatePicker({ onChange }) {
+function DatePicker({ onChange, value }) {
     return (
         <form className="date-picker" noValidate>
             <TextField
@@ -12,10 +12,10 @@ function DatePicker({ onChange }) {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                value={value}
                 onChange={e => {
                     const { value } = e.target;
                     onChange(value);
-                    console.log("date picker component console", { value }.value);
                 }}
             />
         </form>
