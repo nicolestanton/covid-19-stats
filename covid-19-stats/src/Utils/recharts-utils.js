@@ -4,17 +4,12 @@ export function convertCovidDataToLineChartFormat(data, numberOfDays) {
     }
 
     const copiedData = numberOfDays ? [...data].slice(0, numberOfDays) : [...data];
-    const latestData = data.slice(-1).pop()
-
 
     const formattedData = copiedData.map((item) => ({
-        Name: item.Country,
-        Confirmed: item.Confirmed,
-        Deaths: item.Deaths,
-        Recovered: item.Recovered,
+        Cases: item.Cases,
     }));
 
-    console.log('this data', formattedData)
+    console.log('chart data', formattedData)
 
     return formattedData;
 }

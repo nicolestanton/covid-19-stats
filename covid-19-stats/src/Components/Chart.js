@@ -27,10 +27,7 @@ export function Chart({ data, days }) {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="Confirmed" stroke="#82ca9d" />
-            <Line type="monotone" dataKey="Deaths" stroke="#fb74c7" />
-            <Line type="monotone" dataKey="Recovered" stroke="black" />
-
+            <Line type="monotone" dataKey="Cases" stroke="#82ca9d" />
         </LineChart>
     );
 
