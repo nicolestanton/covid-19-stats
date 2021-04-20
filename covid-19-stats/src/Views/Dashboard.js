@@ -80,7 +80,7 @@ export function Dashboard() {
               }} />
           </div>
           <div className='data-chart'>
-            <Chart data={data.Countries} />
+            <Chart data={data} />
           </div>
         </div>
       </div>
