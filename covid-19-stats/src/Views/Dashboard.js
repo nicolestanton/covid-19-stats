@@ -1,26 +1,17 @@
 import React, { useState } from "react";
 import useFetch from '../Hooks/useFetch'
 import Countries from '../Config/Countries'
-
 import Select from 'react-select'
 import Chart from '../Components/Chart'
 import { getApiUrl } from '../Utils/api-utils';
 import { readableDateFormat, formatDate } from '../Utils/date-utils';
 import DatePicker from '../Components/DatePicker'
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBacteria } from '@fortawesome/free-solid-svg-icons'
 
 export function Dashboard() {
   const [country, setCountry] = useState('cuba');
   const todaysDate = new Date()
-
-  // / end date variables start yesterday due to API not being updated
-  const yesterdayEpocDate = todaysDate.setDate(todaysDate.getDate() - 1);
-  const yesterdayDate = new Date(yesterdayEpocDate)
-  const defaultIsoDate = yesterdayDate.toISOString()
-
   const endDate = new Date(todaysDate)
   const defaultEndIsoDate = endDate.toISOString()
   const formattedDate = formatDate(todaysDate)
@@ -43,15 +34,10 @@ export function Dashboard() {
       <div>Loading...</div>
     )
   }
-
-  const latestData = data.slice(-1).pop()
-
   const startDateFromDatePicker = new Date(chosenStartDate)
   const isoStartDateFromDatePicker = startDateFromDatePicker.toISOString()
 
-  console.log('data:', data);
-
-
+  console.log(isoStartDate)
   return (
     <React.Fragment>
       <div className="app-container">
@@ -75,13 +61,13 @@ export function Dashboard() {
               }
               }
             />
-
             <Select className='react-select' options={Countries} placeholder={country}
               onChange={(e) => {
                 setCountry(e.value)
               }} />
           </div>
-          <div className='data-chart'>
+          <div className='data-chart' testid={'line-chart'}>
+
             <Chart data={data} numberOfDays={10} />
           </div>
         </div>

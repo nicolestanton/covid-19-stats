@@ -1,6 +1,6 @@
 # Covid 19 Dashboard
 
-This project is a dashboard showing statistics for places in the UK about Coronavirus.
+This project is a dashboard showing statistics for countries around the world about Coronavirus.
 
 
 ## Getting Started

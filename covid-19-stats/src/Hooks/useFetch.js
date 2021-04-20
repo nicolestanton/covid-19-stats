@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+
+//added this as a hook so if the same country is selected again it doesnt do another request
 
 const useFetch = ({ url }) => {
   const [data, setData] = useState(null);

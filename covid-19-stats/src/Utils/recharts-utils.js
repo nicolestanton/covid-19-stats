@@ -1,3 +1,5 @@
+//need to add comments here
+
 export function convertCovidDataToLineChartFormat(data, numberOfDays) {
     if (!Array.isArray(data)) {
         return [];

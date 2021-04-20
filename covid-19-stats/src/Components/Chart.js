@@ -2,6 +2,7 @@ import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { convertCovidDataToLineChartFormat } from '../Utils/recharts-utils';
 
+//used 'https://recharts.org/en-US/guide/getting-started' for this
 export function Chart({ data, days }) {
 
     const formattedData = convertCovidDataToLineChartFormat(data, days);

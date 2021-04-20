@@ -4,6 +4,7 @@ export function readableDateFormat(date) {
     return dateObject.toDateString();
 }
 
+//changes 'Mon 16 Apr 2021' into '2021-04-16
 export function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
