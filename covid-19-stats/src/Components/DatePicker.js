@@ -15,6 +15,7 @@ function DatePicker({ onChange, value }) {
                 value={value}
                 onChange={e => {
                     const { value } = e.target;
+                    // console.log('this value', value)
                     onChange(value);
                 }}
             />
