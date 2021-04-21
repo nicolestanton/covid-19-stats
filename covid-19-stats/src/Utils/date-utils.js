@@ -18,3 +18,8 @@ export function formatDate(date) {
 
     return [year, month, day].join('-');
 }
+
+export function convertToIsoDate(date) {
+    const dateObject = new Date(date);
+    return dateObject.toISOString();
+}

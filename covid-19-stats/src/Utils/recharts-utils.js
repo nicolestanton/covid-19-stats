@@ -11,7 +11,6 @@ export function convertCovidDataToLineChartFormat(data, numberOfDays) {
         Cases: item.Cases,
     }));
 
-    console.log('chart data', formattedData)
 
     return formattedData;
 }
